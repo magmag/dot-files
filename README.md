@@ -1,4 +1,4 @@
 dot-files
 =========
 
-dot file
+設定をいろいろ
