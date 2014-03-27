@@ -100,6 +100,7 @@ NeoBundle 'https://github.com/vim-scripts/yanktmp.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/calendar.vim'
+NeoBundle 'taichouchou2/alpaca_powertabline'
 
 " vim plugins
 "-------------------------------------------------------------------------
