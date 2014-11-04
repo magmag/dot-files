@@ -75,7 +75,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 filetype plugin indent on     " Required!
 
@@ -160,3 +160,8 @@ let g:NERDTreeDirArrows=0
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 let g:calendar_updatetime = 1000
+
+
+call neobundle#end()
+
+NeoBundleCheck
