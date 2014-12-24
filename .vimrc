@@ -8,6 +8,7 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set t_Co=256
 set encoding=utf8
 set ambiwidth=double
+colorscheme desert
 set background=dark
 set laststatus=2
 set number
@@ -96,6 +97,7 @@ endif
 NeoBundle 'mfontani/vim-gitrebase-mappings'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
@@ -106,6 +108,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'taichouchou2/alpaca_powertabline'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " vim plugins
 "-------------------------------------------------------------------------
@@ -166,6 +170,12 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 let g:calendar_updatetime = 1000
 
+" vim-indent-guides
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=240
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=2
 
 call neobundle#end()
 
