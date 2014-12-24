@@ -20,6 +20,11 @@ set expandtab
 set directory=~/tmp/vimswap/
 set backupdir=~/tmp/vimbackup/
 
+" 検索時のハイライト
+set hlsearch
+" esc2回で消える
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 " タブページ
 " Anywhere SID.
 function! s:SID_PREFIX()
