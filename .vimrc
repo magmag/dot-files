@@ -17,6 +17,9 @@ set smarttab
 set tabstop=2
 set smartindent
 set expandtab
+set showmatch
+set matchtime=2
+set display=lastline
 
 set directory=~/tmp/vimswap/
 set backupdir=~/tmp/vimbackup/
