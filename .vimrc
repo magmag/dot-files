@@ -1,3 +1,7 @@
+if $SHELL =~ 'fish'
+  set shell=/bin/sh
+endif
+
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=ucs-bom,utf-8,latin1
 endif
@@ -20,6 +24,7 @@ set expandtab
 set showmatch
 set matchtime=2
 set display=lastline
+set tags=./tags,tags
 
 set directory=~/tmp/vimswap/
 set backupdir=~/tmp/vimbackup/
@@ -76,6 +81,13 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 "--------------------------------------------------------------------------
+" .md .mdwn などをfiletype markdownとして
+augroup PrevimSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+"--------------------------------------------------------------------------
 " neobundle
 set nocompatible               " Be iMproved
 filetype off                   " Required!
@@ -113,6 +125,12 @@ NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'taichouchou2/alpaca_powertabline'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'kannokanno/previm'
+
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Firefox'
+
 
 " vim plugins
 "-------------------------------------------------------------------------
@@ -137,10 +155,10 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
-  \ 'active_filetypes': ['php', 'ruby', 'html', 'javascript'],
-  \ 'passive_filetypes': [] }
+  \ 'active_filetypes': ['php', 'ruby', 'html', 'javascript'] }
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers=['jshint']
 syntax on
 
@@ -175,10 +193,13 @@ let g:calendar_updatetime = 1000
 
 " vim-indent-guides
 let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=245
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=240
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=2
+
+" previm
+let g:previm_open_cmd="open -a 'google chrome'"
 
 call neobundle#end()
 
