@@ -129,7 +129,6 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'kannokanno/previm'
 
 au BufRead,BufNewFile *.md set filetype=markdown
-let g:previm_open_cmd = 'open -a Firefox'
 
 
 " vim plugins
